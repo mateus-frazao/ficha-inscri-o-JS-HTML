@@ -1,0 +1,27 @@
+body
+{
+    background-image: url(if-logo.png) ;
+    background-repeat:no-repeat;
+    background-color:green;
+    text-align: center;
+    font-size: 25px;
+}
+
+div
+{
+   font-family: arial;
+   font-size: 25px;
+   color: white;
+  
+}
+.divresposta
+{
+    background-color: red;
+    text-align:start;
+}
+
+textarea:focus, input:focus, select:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+}

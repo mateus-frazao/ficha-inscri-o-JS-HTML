@@ -1,0 +1,173 @@
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="ficha-inscrição.css" />
+
+<script language="javascript">
+    function processar() {
+        var nomeda, cpfda, sexoda, brasileira, nacionalidade, msg, selecao, observacoes, emailda, alunoifsp, campus, defda, opcao, areadi, hob;
+        nomeda = document.formulario.nome.value;
+        sexoda = document.formulario.sexo.value;
+        emailda = document.formulario.email.value;
+        cpfda = document.getElementById("cpf");
+        alunoifsp = document.getElementById("AlunoIFSP").checked;
+
+
+        nescedes = document.formulario.opcao.value;
+        (nescedes=="Não"?"Não":"Sim");
+        defda = "";
+        defda += (document.formulario.vis.checked?"Visual; " :"");
+        defda += (document.formulario.aud.checked?"Auditiva; " :"");
+        defda += (document.formulario.moto.checked?"Motora; " :"");
+        defda += (document.formulario.ment.checked?"Mental; " :"");
+        defda += (document.formulario.pc.checked?"Paralisia Cerebral; " :"");
+
+
+        
+        areadi = "";
+        areadi += (document.formulario.tecno.checked?"Tecnologia; " :"");
+        areadi += (document.formulario.exatas.checked?"Exatas; " :"");
+        areadi += (document.formulario.huma.checked?"Humanas; " :"");
+        areadi += (document.formulario.biolo.checked?"Biológicas; " :"");
+        areadi += (document.formulario.educa.checked?"Educação; " :"");
+
+
+        hob = "";
+        hob += (document.formulario.jard.checked?"Jardinagem; " :"");
+        hob += (document.formulario.art.checked?"Artesanato; " :"");
+        hob += (document.formulario.lei.checked?"Leitura; " :"");
+        hob += (document.formulario.esc.checked?"Escrita; " :"");
+        hob += (document.formulario.mus.checked?"Música; " :"");
+        hob += (document.formulario.pin.checked?"Pintura; " :"");
+        hob += (document.formulario.rd.checked?"Redes Sociais; " :"");
+        hob += (document.formulario.vgn.checked?"Viagens; " :"");
+        hob += (document.formulario.sers.checked?"Séries; " :"");
+        hob += (document.formulario.acad.checked?"Academia; " :"");
+        hob += (document.formulario.outros.checked?"Outros; " :"");
+      
+        
+ 
+        observacoes = document.formulario.obs.value;
+        document.formulario.nomeexibe.value = nomeda;
+        alunoifsp = (alunoifsp?"Alun":"Não Alun");
+        alunoifsp += (sexoda=="F"?"a":"o");
+        
+        selecao = document.formulario.select.value;
+
+        msg = "Olá " + (sexoda=="F"?"Sra. ":"Sr. ") + 
+        nomeda +  ", " + "<br><br>"+ 
+        alunoifsp + " do IFSP" + ", " + "<br><br>" + 
+        "Email: " + emailda +"<br><br>" + 
+        " CPF: " + cpfda.value + "<br><br>" + 
+        " Necessidade Especial: " + nescedes + "</br>"+ defda + "<br><br>" +
+        "Áreas de Interesse: " + areadi + "<br><br>" + 
+        "Hobbies: " + hob;
+        document.getElementById("destino").innerHTML = msg + "<br><br>"  + "Câmpus: " + selecao + '\n'  + "<br><br>" + "Observações: " + '\n' + observacoes;
+
+    }
+</script>
+
+</head>
+<body>
+<div>
+<form name="formulario">
+<b>Nome:</b> <input type="text" name="nome" size="30" maxlength="30" /><br><br>
+<b>CPF:</b> <input type="text" id="cpf" maxlength="11"/><br><br>
+<b>Email:</b> <input type="text" name="email"><br><br>
+<b>Aluno IFSP</b> <input type="checkbox" id="AlunoIFSP"><br><br>
+<b>Sexo:</b> <br>
+<input type="radio" name="sexo" value="F">Feminino<br>
+<input type="radio" name="sexo" value="M">Masculino<br><br> 
+
+<b>Câmpus:</b>
+<select name="select">
+    <option value="Cubatão" selected>Cubatão</option>
+    <option value="Araraquara" >Araraquara</option>
+    <option value="Avaré">Avaré</option>
+    <option value="Barretos">Barretos</option>
+    <option value="Birigui">Birigui</option>
+    <option value="Boituva">Boituva</option>
+    <option value="Bragança Paulista">Bragança Paulista</option>
+    <option value="Campinas">Campinas</option>
+    <option value="Campos do Jordão">Campos do Jordão</option>
+    <option value="Capivari">Capivari</option>
+    <option value="Caraguatatuba">Caraguatatuba</option>
+    <option value="Catanduva">Catanduva</option>
+    <option value="Guarulhos">Guarulhos</option>
+    <option value="Hortolândia">Hortolândia</option>
+    <option value="Ilha Solteira">Ilha Solteira</option>
+    <option value="Itapetininga">Itapetininga</option>
+    <option value="Itaquaquecetuba">Itaquaquecetuba</option>
+    <option value="Jacareí">Jacareí</option>
+    <option value="Jundiaí">Jundiaí</option>
+    <option value="Matão">Matão</option>
+    <option value="Piracicaba">Piracicaba</option>
+    <option value="Pirituba">Pirituba</option>
+    <option value="Presidente Epitácio">Presidente Epitácio</option>
+    <option value="Registro">Registro</option>
+    <option value="Salto">Salto</option>
+    <option value="São Carlos">São Carlos</option>
+    <option value="São João da Boa Vista">São João da Boa Vista</option>
+    <option value="São José do Rio Preto">São José do Rio Preto</option>
+    <option value="São José dos Campos">São José dos Campos</option>
+    <option value="São Miguel Paulista">São Miguel Paulista</option>
+    <option value="São Paulo">São Paulo</option>
+    <option value="São Roque">São Roque</option>
+    <option value="Sertãozinho">Sertãozinho</option>
+    <option value="Sorocaba">Sorocaba</option>
+    <option value="Suzano">Suzano</option>
+    <option value="Tupã">Tupã</option>
+    <option value="Votuporanga">Votuporanga</option>
+  </select><br><br>
+
+  <b>Nacessidades Especiais:</b> <br>
+<input type="radio" name="opcao" value="Sim">Sim<br>
+<input type="radio" name="opcao" value="Não">Não<br><br>
+
+<b>Se sim, qual(is)?</b><br>
+<input type="checkbox" name="vis" value="defvisual">Visual<br>
+<input type="checkbox" name="aud" value="defauditiva">Auditiva<br>
+<input type="checkbox" name="moto" value="defmotora">Motora<br>
+<input type="checkbox" name="ment" value="defmental">Mental<br>
+<input type="checkbox" name="pc" value="defpc">Paralisia Cerebral<br><br>
+
+
+<b>Área de Interesse:</b><br>
+<input type="checkbox" name="tecno" value="Tec">Tecnologia<br>
+<input type="checkbox" name="exatas" value="exa">Exatas<br>
+<input type="checkbox" name="huma" value="hum">Humanas<br>
+<input type="checkbox" name="biolo" value="bio">Biológicas<br>
+<input type="checkbox" name="educa" value="edu">Educação<br><br>
+
+<b>Hobbies:</b><br>
+<input type="checkbox" name="jard" value="jaridnagem">Jardinagem<br>
+<input type="checkbox" name="art" value="Artesanato">Artesanato<br>
+<input type="checkbox" name="lei" value="Leitura">Leitura<br>
+<input type="checkbox" name="esc" value="Escrita">Escrita<br>
+<input type="checkbox" name="mus" value="Música">Música<br>
+<input type="checkbox" name="pin" value="Pintura">Pintura<br>
+<input type="checkbox" name="rd" value="Redes Socias">Redes Socias<br>
+<input type="checkbox" name="vgn" value="Viagens">Viagens<br>
+<input type="checkbox" name="sers" value="Séries">Séries<br>
+<input type="checkbox" name="acad" value="Academia">Academia<br>
+<input type="checkbox" name="outros" value="Outros">Outros<br><br>
+
+
+
+
+
+<b>Observações:</b><br>
+<textarea placeholder="Digite suas observações" name="obs" rows="5" cols="50"></textarea><br><br>
+
+<input value="OK" type="button" onclick="processar();">
+
+<br><br><br>
+<input type="text" name="nomeexibe" size="50"readonly><br>
+</form>
+<div class="divresposta">
+<b><center>Aqui vai aparecer a mensagem:</center></b><p id="destino"></p>
+</div>
+</div>
+
+</body>
+</html>
